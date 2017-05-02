@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Goto audio",
+  "description": "Goto the tab that is playing audio. Exclusive for Chrome",
+  "version": "1.0",
+  "browser_action": {
+   "default_icon": "icon.png"
+  },
+  "permissions": [
+          "tabs"
+  ],
+  "background": {
+    "scripts": ["goto-audio.js"]
+  }
+}
