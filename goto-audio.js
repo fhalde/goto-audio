@@ -1,7 +1,7 @@
 'use strict';
 
+var last;
 chrome.browserAction.onClicked.addListener(function(curr) {
-    var last;
     chrome.tabs.query({}, tabs => {
         var count = 0;
         for (var i = 0; i < tabs.length; i++) {
