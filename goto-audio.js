@@ -15,20 +15,12 @@ chrome.browserAction.onClicked.addListener(function(curr) {
         }
 
         for (var i = 0; i < tabs.length; i++) {
-            if (tabs[i].audible && count === 1) {
+            if (tabs[i].audible && (count === 1 || last !== tabs[i].id)) {
                 chrome.windows.update(tabs[i].windowId, {
                   focused: true
-                })
-                chrome.tabs.update(tabs[i].id, {
-                  highlighted: true
                 });
-                last = tabs[i].id;
-                break;
-            }
-
-            if (tabs[i].audible && last !== tabs[i].id) {
                 chrome.tabs.update(tabs[i].id, {
-                  highlighted: true
+                  active: true
                 });
                 last = tabs[i].id;
                 break;
